@@ -1,0 +1,235 @@
+﻿<html lang="ru">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<head>
+  <style>
+    #accordion, #tabs {
+      display: inline-block;
+      width: 80%;
+    }
+    #btn1, #btn2, #btn3, .vse {
+      padding: 3px;
+      background-color: Blue;
+	  border-radius: 2px;
+	  color: white;
+    }
+
+  </style>
+  <link rel="stylesheet" href="jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="jquery-ui.js"></script>
+</head>
+<body>
+	<div style="border: 3px solid black; padding: 10px; margin-right: 30%; text-align: center;">
+		<h1 style="color: blue;"> Эдуард Фазлыев ПИ-320</h1>
+  <h3>Вариант 6 - перечень вакансий и формы подачи резюме</h3>
+  <p >В музыкальную группу требуются музыканты</p>
+  <span id="accordion">
+  <h3>Вокалист</h3> <div>
+  <p>Вы должны обладать приятным тембром голоса, желательно, бас. <br> <span style="font-weight: bold;">Музыкальное образование ОБЯЗАТЕЛЬНО</span></p>
+  </div> 
+  <h3>Барабанщик</h3> <div>
+  <p>Опыт игры на инструменте - не менее 5 лет.
+</p>
+  </div> 
+  <h3>Гитарист</h3> <div>
+  <p>Опыт игры на инструменте - не менее 5 лет. Обязательна своя гитара.
+</p></div> 
+  </span>
+<br><br><br> <span style="font-weight: bold;color: blue;">Если Вас заинтересовали вакансии, то ознакомьтесь с треованиями более детально и присылайте резюме. Спасибо!</span><br><br>
+    <div id="tabs"> <ul> 
+      <li><a href="#tabs-1">Вокалист</a></li> 
+      <li><a href="#tabs-2">Барабанщик</a></li> 
+      <li><a href="#tabs-3">Гитарист</a></li> </ul> 
+      <div id="tabs-1"> <h2>Группа "Top ZZ" ищет вокалиста!</h2> 
+        <p>Для того, чтобы стать вокалистом в нашей группе, необходимо предоставить видео-визитку. Она должна иметь длительность 2-3 минуты, в которой содержится:
+			<Ol>
+				<li>Краткая информация о себе</li>
+				<li>Образование</li>
+				<li>Почему хотите попасть в нашу группу?</li>
+				<li>Акапельное исполнение любой песни (30сек)</li>
+			</Ol>
+          <button id="btn1">Отправить резюме</button></p> 
+        </div> 
+      <div id="tabs-2"> <h2>Группа "Top ZZ" ищет барабанщика!</h2> 
+        <p> Для того, чтобы стать барабанщиком в нашей группе, необходимо предоставить видео-визитку. Она должна иметь длительность 2-3 минуты, в которой содержится:
+			<Ol>
+				<li>Краткая информация о себе</li>
+				<li>Почему хотите попасть в нашу группу?</li>
+				<li>Запись игры на барабанах (30сек)</li>
+			</Ol>
+          <button id="btn2">Отправить резюме</button></p> </div>
+       <div id="tabs-3"> <h2>Группа "Top ZZ" ищет гитариста!</h2> 
+      <p>Для того, чтобы стать гитаристом в нашей группе, необходимо предоставить видео-визитку. Она должна иметь длительность 2-3 минуты, в которой содержится:
+		<Ol>
+			<li>Краткая информация о себе</li>
+			<li>Почему хотите попасть в нашу группу?</li>
+			<Li>Информация о Вашей гитаре, почему сделали выбор именно в ее пользу</Li>
+			<li>Запись игры на гитаре (30сек)</li>
+		</Ol>
+        <button id="btn3">Отправить резюме</button></p> </div> 
+      </div>
+      <div id="dialog1" title='Отставить резюме "Вокалист"'>
+        <h3>Резюме</h3>
+        <form action="">
+          ФИО: <input type="text" size="40"><br><br>
+          Пол: <input type="radio" name="browser" value="m">M<input type="radio" name="browser" value="zh"> Ж<br><br>
+          Дата рождения:  <input type="text"  id="date"><br><br>
+          Город: <input type="text"  id="city"><br><br>
+          Сколько лет занимаетесь музыкой? <p style="display: inline;" id="sliderValue"></p> лет/года
+          <br><br>
+          <div id="slider" style="width: 100%;"></div> <br>
+          Телефон: <input type="text"><br><br>
+          EMAIL: <input type="text"><br><br>
+         Ссылка на видео-визитку: <textarea name="comment" title="Желательно, ссылку на Яндекс.диск" cols="60" rows="1"></textarea><br><br>
+          Ваша потенциальная зарплата: <span name="comment"  id="zp1">(нажми)</span><br><br>
+        </form>
+        <input type="button" class="vse" value="Отправить">
+      </div>
+      <div id="dialog2" title='Отставить резюме "Барабанщик"'>
+        <h3>Резюме</h3>
+        <form action="">
+          ФИО: <input type="text"><br><br>
+          Пол: <input type="radio" name="browser" value="m">M<input type="radio" name="browser" value="zh"> Ж<br><br>
+          Дата рождения:  <input type="text"  id="date2"><br><br>
+          Город: <input type="text"  id="city2"><br><br>
+          Сколько лет занимаетесь музыкой? <p style="display: inline;" id="sliderValue2"></p> лет/года
+          <br><br>
+          <div id="slider2" style="width: 100%;"></div> <br>
+          Телефон: <input type="text"><br><br>
+          EMAIL: <input type="text"><br><br>
+          Ссылка на видео-визитку: <textarea name="comment" title="Желательно, ссылку на Яндекс.диск" cols="60" rows="1"></textarea><br><br>
+          Ваша потенциальная зарплата: <span name="comment"  id="zp2"> (нажми) </span><br><br>
+        </form>
+        <input type="button" class="vse" value="Отправить">
+      </div>
+      <div id="dialog3" title='Отставить резюме "Гитарист"'>
+        <h3>Резюме</h3>
+        <form action="">
+          ФИО: <input type="text"><br><br>
+          Пол: <input type="radio" name="browser" value="m">M<input type="radio" name="browser" value="zh"> Ж<br><br>
+          Дата рождения:  <input type="text"  id="date3"><br><br>
+          Город: <input type="text"  id="city3"><br><br>
+          Сколько лет занимаетесь музыкой? <p style="display: inline;" id="sliderValue3"></p> лет/года
+          <br><br>
+          <div id="slider3" style="width: 100%;"></div> <br>
+          Телефон: <input type="text"><br><br>
+          EMAIL: <input type="text"><br><br>
+          Ссылка на видео-визитку: <textarea name="comment" title="Желательно, ссылку на Яндекс.диск" cols="60" rows="1"></textarea><br><br>
+          Ваша потенциальная зарплата: <span name="comment"  id="zp3">(нажми)</span><br><br>
+          
+        </form>
+        <input type="button" class="vse" value="Отправить">
+      </div>
+      <div class="otpr" title="Отправить резюме?">Соглашаясь на отправку резюме, Вы подтверждаете возможность обработки Ваших персональных данных.</div>
+      <div class="da" title="Отправлено">Надеемся, Вы нам понравитесь!</div>
+      <div class="net" title="Не отправлено">Резюме не отправлено</div>
+	</div>
+
+  <script type="text/javascript">
+    $(function(){
+      $("#accordion" ).accordion({  collapsible: true });   
+      $('#tabs').tabs();
+      $('#dialog1').dialog({ autoOpen: false, width: 500 });
+      $('#dialog2').dialog({ autoOpen: false, width: 500 });
+      $('#dialog3').dialog({ autoOpen: false, width: 500 });
+      $('.da').dialog({ autoOpen: false, width: 500 });
+      $('.net').dialog({ autoOpen: false, width: 500 });
+      $('.otpr').dialog({ autoOpen: false, width: 300, buttons:{
+        "Да": function(){ 
+          $('.otpr').dialog('close'); $('.da').dialog('open');  },
+        "Нет": function(){ $('.otpr').dialog('close');$('.net').dialog('open'); }
+    }
+	});
+      $("#btn1").click(function(){ 
+        $( "#dialog1" ).dialog('open'); 
+      })
+      $("#btn2").click(function(){ 
+        $( "#dialog2" ).dialog('open'); 
+      })
+      $("#btn3").click(function(){ 
+        $( "#dialog3" ).dialog('open'); 
+      })
+      $("#date").datepicker({ dateFormat: "dd.mm.yy" });
+      $("#date2").datepicker({ dateFormat: "dd.mm.yy" });
+      $("#date3").datepicker({ dateFormat: "dd.mm.yy" });
+      $('#slider').slider({
+		    min: 0,
+	    	max: 30,
+        change: function (event, ui){
+            var val = $('#slider').slider('value');
+            $('#sliderValue').html(val);
+        }
+    });
+    $('#slider2').slider({
+		    min: 0,
+	    	max: 30,
+        change: function (event, ui){
+            var val = $('#slider2').slider('value');
+            $('#sliderValue2').html(val);
+        }
+    });
+    $('#slider3').slider({
+		    min: 0,
+	    	max: 30,
+        change: function (event, ui){
+            var val = $('#slider3').slider('value');
+            $('#sliderValue3').html(val);
+        }
+    });
+    var city = ["Москва", "Уфа", "Санкт-Петербург", "Казань", "Новосибирск", "Сочи", "Калининград", "Стерлитамак", "Бирск", "Симферополь", "Краснодар", "Красноярск", "Оренбург"]; 
+	  $("#city" ).click(function(){
+		$("#city").autocomplete({ source: city });
+	});
+  $("#city2" ).click(function(){
+		$("#city2").autocomplete({ source: city });
+	});
+  $("#city3" ).click(function(){
+		$("#city3").autocomplete({ source: city });
+	});
+  $(".vse" ).click(function(){
+		$('.otpr').dialog('open'); })
+  $("#zp1" ).click(function(){
+    var k = $('#slider').slider('value');
+    if (k<=2){
+      var zp = 150300*(1+k/10);
+    }
+    if (k>2 && k<5){
+      var zp = 20010*(1+k/10);
+    }
+    if (k>=5){
+      var zp = 21000*(1+k/10);
+    }
+    document.getElementById('zp1').innerHTML = zp;
+  })
+  $("#zp2" ).click(function(){
+    var k = $('#slider2').slider('value');
+    if (k<=2){
+      var zp = 8020*(1+k/10);
+    }
+    if (k>2 && k<5){
+      var zp = 12000*(1+k/10);
+    }
+    if (k>=5){
+      var zp = 13500*(1+k/10);
+    }
+    document.getElementById('zp2').innerHTML = zp;
+  })
+  $("#zp3" ).click(function(){
+    var k = $('#slider3').slider('value');
+    if (k<=2){
+      var zp = 11400*(1+k/10);
+    }
+    if (k>2 && k<5){
+      var zp = 15100*(1+k/10);
+    }
+    if (k>=5){
+      var zp = 16300*(1+k/10);
+    }
+    document.getElementById('zp3').innerHTML = zp;
+  })
+  $( document ).tooltip();
+    });
+</script>
+</body>
+</html>
