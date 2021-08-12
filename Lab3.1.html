@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<script type="text/javascript">
+			let tek = 5;
+					function fff(str) {
+						if (str.length==0) {
+			document.getElementById("ffff").innerHTML="";
+			return;
+		  }
+		  if (window.XMLHttpRequest) {
+			xmlhttp=new XMLHttpRequest();
+		  } else {  
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		  xmlhttp.onreadystatechange=function() {
+			if (this.readyState==4 && this.status==200) {
+			  document.getElementById("ffff").innerHTML=this.responseText;
+			}
+		  }
+					   xmlhttp.open("GET","ajax.items.php?tek="+tek,true);
+					   xmlhttp.send();
+					   tek+=5;
+					}
+				 </script>
+				 <div style="border: 3px solid black; padding: 10px; margin-right: 70%; text-align: center;">
+					<h1 style="color: blue;"> Эдуард Фазлыев ПИ-320</h1>
+					<h3>УГАТУ и «Техпромсервис» подписали соглашение о сотрудничестве на МАКСе</h3>
+					<p>Свои подписи под документом о сотрудничестве и совместной деятельности поставили ректор УГАТУ Сергей Новиков и генеральный директор ООО «Техпромсервис» Олег Юнусов.</p>
+					<img src="https://www.ugatu.su/media/uploads/MainSite/News/2021/07-21/001.jpg" alt="" style="width: 80%;">
+					<br>
+					<h3>Студенты УГАТУ смогут пройти отбор в отряд космонавтов</h3>
+					<p>В рамках деловой программы Московского авиакосмического салона МАКС-2021 состоялось подписание договора о сотрудничестве УГАТУ с Научно-исследовательским испытательным центром подготовки космонавтов имени Ю.А. Гагарина (ЦПК).</p>
+					<img src="https://www.ugatu.su/media/uploads/MainSite/News/2021/07-20/IMG-20210720-WA0017.jpg" alt="" style="width: 80%;">
+					<br>
+					<h3>РЕЖИМ РАБОТЫ ПРИЕМНОЙ КОМИССИИ УГАТУ</h3>
+					<p>Количество бюджетных мест в этом году: 1594 – на направления бакалавриата и специалитета, 468 – магистратуры и 515 – среднего профессионального образования.</p>
+					
+					<img src="https://www.ugatu.su/media/uploads/MainSite/News/2021/06-18/scheme.jpg" alt="" style="width: 80%;">
+					<br>
+					<span id = "ffff"></span>
+			<form>
+				<input onclick = "fff(this.value)" type="button" value="Загрузить ещё" id="b">
+			</form>
+		</div>
+			</body>
+	</html> 
